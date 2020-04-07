@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="supplemental-pub-data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="supp.title-block">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="supp.title">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="text"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="supp.version">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="version"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="process-category">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="classification-outsourcing">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="normal"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="supp.data-block">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="application-number"/>
+              <xs:element type="xs:byte" name="representative-figure"/>
+              <xs:element name="classifications-cpc">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="main-cpc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="classification-cpc">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="cpc-version-indicator">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:int" name="date"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element type="xs:string" name="section"/>
+                                <xs:element type="xs:byte" name="class"/>
+                                <xs:element type="xs:string" name="subclass"/>
+                                <xs:element type="xs:byte" name="main-group"/>
+                                <xs:element type="xs:short" name="subgroup"/>
+                                <xs:element type="xs:string" name="symbol-position"/>
+                                <xs:element type="xs:string" name="classification-value"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="further-cpc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="classification-cpc" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="cpc-version-indicator">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:int" name="date"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element type="xs:string" name="section"/>
+                                <xs:element type="xs:byte" name="class"/>
+                                <xs:element type="xs:string" name="subclass"/>
+                                <xs:element type="xs:byte" name="main-group"/>
+                                <xs:element type="xs:short" name="subgroup"/>
+                                <xs:element type="xs:string" name="symbol-position"/>
+                                <xs:element type="xs:string" name="classification-value"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="classification-us">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="classification-us-primary">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uspc">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:short" name="class"/>
+                                <xs:element type="xs:int" name="subclass"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="label"/>
+      <xs:attribute type="xs:string" name="class"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

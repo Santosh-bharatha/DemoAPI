@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employees>
+    <employee>
+        <emp-id>1</emp-id>
+        <employee-name>Nagen Kumar Sahu</employee-name>
+        <salary>30000</salary>
+        <address>Angul</address>
+        <id>DD</id>
+        <dept>IT</dept>
+    </employee>
+    <employee>
+        <emp-id>2</emp-id>
+        <employee-name>Santosh</employee-name>
+        <salary>30000</salary>
+        <address>kumar</address>
+        <id>DCD</id>
+        <dept>ITE</dept>
+    </employee>
+</employees>

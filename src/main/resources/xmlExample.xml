@@ -1,0 +1,9 @@
+<example-1>
+   <int>12</int>
+   <date>2013-10-05 00:00:00.0 EDT</date>
+   <date>1978-06-11 00:00:00.0 EDT</date>
+   <text>blah</text>
+   <int>1</int>
+   <int>34525</int>
+   <date>2001-01-05 00:00:00.0 EST</date>
+</example-1>

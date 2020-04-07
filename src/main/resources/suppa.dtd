@@ -1,0 +1,574 @@
+<!--(u-suppub.dtd)
+Revision history
+******************************************
+Date:        2012-12-04
+Version:     0.0.8
+Author:      Narith Tith
+Description:
+1. Added classifications-cpc and sub-elements that it contains to supp.data-block
+2. In supp.data-block, removed element classification-ipc
+3. In supp.data-block,  made classifications-ipcr optional
+4. In supp.data-block, made domestic-filing-data optional 
+5. In supp.version, updated distribution and version attributes	  
+6. In supplemental-pub-data, made process-category optional	  
+7. Change representation of special characters from Unicode to decimal
+8. Added optional element, classification-value to uspc structure 	
+9. Removed classification-value attribute from classification-us-secondary element
+10.  Removed action-date, classification-level, generating-office, classification-status, classification-data-source, and scheme-origination-code elements from classification-cpc.  
+******************************************
+Date: 2007-01-16
+Version: 0.0.7
+Author: Narith Tith (narith.thith@uspto.gov)
+Description:
+1. added elements process-category, classification-outsourcing, normal, special, research, pgpub-classification-correction, edc, initial, final, pgpub, grant, uspto-org-unit-name?, application-category?, invention-subject-matter?, notice-of-allowance-date?, regular, provisional, reissue, reexam, plant, utility, design.
+2. attribute classification-value (I | N) "I" for element classification-us-secondary
+******************************************
+Date: 2005-04-26
+Version: 0.0.6
+Author: Bruce B Cox
+Description:
+1. added classifications-ipcr and elements that it contains
+******************************************
+Date: 9/26/00
+Version: 0.0.5
+Author: AWB
+Description:
+1. Added entity UNKNOWN, Unicode value of 9608.
+******************************************
+Date: 9/8/00
+Version: 0.0.4
+Author: AWB
+Description:
+1. made data-format attribute for application-number 8 digits instead of 7
+2. made usc371-date optional
+3. kept usc102e-date as #PCDATA. PALM/PGPUB must provide either a date if exists, or "none"
+******************************************
+Date: 8/3/00
+Version: 0.0.3
+Author: AWB
+Description:
+1. added element "international-conventions" and its children
+******************************************
+Date: 6/28/00
+Version: 0.0.2
+Author: AWB
+Description:
+1. prior-publication document-id: changed document-id to one-or-more (+)
+******************************************
+Date: 6/28/00
+Version: 0.0.1
+Author: AWB
+Description:
+1. added i4i's UNICODE definitions
+2. supp-pub.version: added class attribute, value "version
+******************************************
+-->
+<!--PUBLIC "-//USPTO//DTD TEAM Project supplemental-pub-data-2012-12-04 Doctype//EN"-->
+<!-- General unknown UNICODE characters will be replaced by the following entity reference -->
+<!-- FYI, the name will be in ALL CAPS for ease of finding when looking at XML files in text editors -->
+<!ENTITY AElig "&#198;">  
+<!ENTITY Aacute "&#193;">
+<!ENTITY Acirc "&#194;">
+<!ENTITY Agrave "&#192;">
+<!ENTITY Alpha "&#913;">
+<!ENTITY Aring "&#197;">
+<!ENTITY Atilde "&#195;">
+<!ENTITY Auml "&#196;">
+<!ENTITY Beta "&#914;">
+<!ENTITY Ccedil "&#199;">
+<!ENTITY Chi "&#935;">
+<!ENTITY Dagger "&#8225;">
+<!ENTITY Delta "&#916;">
+<!ENTITY ETH "&#208;">
+<!ENTITY Eacute "&#201;">
+<!ENTITY Ecirc "&#202;">
+<!ENTITY Egrave "&#200;">
+<!ENTITY Epsilon "&#917;">
+<!ENTITY Eta "&#919;">
+<!ENTITY Euml "&#203;">
+<!ENTITY Gamma "&#915;">
+<!ENTITY Iacute "&#205;">
+<!ENTITY Icirc "&#206;">
+<!ENTITY Igrave "&#204;">
+<!ENTITY Iota "&#921;">
+<!ENTITY Iuml "&#207;">
+<!ENTITY Kappa "&#922;">
+<!ENTITY Lambda "&#923;">
+<!ENTITY Mu "&#924;">
+<!ENTITY Ntilde "&#209;">
+<!ENTITY Nu "&#925;">
+<!ENTITY OElig "&#338;">
+<!ENTITY Oacute "&#211;">
+<!ENTITY Ocirc "&#212;">
+<!ENTITY Ograve "&#210;">
+<!ENTITY Omega "&#937;">
+<!ENTITY Omicron "&#927;">
+<!ENTITY Oslash "&#216;">
+<!ENTITY Otilde "&#213;">
+<!ENTITY Ouml "&#214;">
+<!ENTITY Phi "&#934;">
+<!ENTITY Pi "&#928;">
+<!ENTITY Prime "&#8243;">
+<!ENTITY Psi "&#936;">
+<!ENTITY Rho "&#929;">
+<!ENTITY Scaron "&#352;">
+<!ENTITY Sigma "&#931;">
+<!ENTITY THORN "&#222;">
+<!ENTITY Tau "&#932;">
+<!ENTITY Theta "&#920;">
+<!ENTITY UNKNOWN "&#9608;">
+<!ENTITY Uacute "&#218;">
+<!ENTITY Ucirc "&#219;">
+<!ENTITY Ugrave "&#217;">
+<!ENTITY Upsilon "&#933;">
+<!ENTITY Uuml "&#220;">
+<!ENTITY Xi "&#926;">
+<!ENTITY Yacute "&#221;">
+<!ENTITY Yuml "&#376;">
+<!ENTITY Zeta "&#918;">
+<!ENTITY aacute "&#225;">
+<!ENTITY acirc "&#226;">
+<!ENTITY acute "&#180;">
+<!ENTITY aelig "&#230;">
+<!ENTITY agrave "&#224;">
+<!ENTITY alefsym "&#8501;">
+<!ENTITY alpha "&#945;">
+<!ENTITY and "&#8869;">
+<!ENTITY ang "&#8736;">
+<!ENTITY apos "&#39;">
+<!ENTITY aring "&#229;">
+<!ENTITY asymp "&#8776;">
+<!ENTITY atilde "&#227;">
+<!ENTITY auml "&#228;">
+<!ENTITY bdquo "&#8222;">
+<!ENTITY beta "&#946;">
+<!ENTITY brvbar "&#166;">
+<!ENTITY bull "&#8226;">
+<!ENTITY cap "&#8745;">
+<!ENTITY ccedil "&#231;">
+<!ENTITY cedil "&#184;">
+<!ENTITY cent "&#162;">
+<!ENTITY chi "&#967;">
+<!ENTITY circ "&#710;">
+<!ENTITY clubs "&#9827;">
+<!ENTITY cong "&#8773;">
+<!ENTITY copy "&#169;">
+<!ENTITY crarr "&#8629;">
+<!ENTITY cup "&#8746;">
+<!ENTITY curren "&#164;">
+<!ENTITY dArr "&#8659;">
+<!ENTITY dagger "&#8224;">
+<!ENTITY darr "&#8595;">
+<!ENTITY deg "&#176;">
+<!ENTITY delta "&#948;">
+<!ENTITY diams "&#9830;">
+<!ENTITY divide "&#247;">
+<!ENTITY eacute "&#233;">
+<!ENTITY ecirc "&#234;">
+<!ENTITY egrave "&#232;">
+<!ENTITY empty "&#8709;">
+<!ENTITY emsp "&#8195;">
+<!ENTITY ensp "&#8194;">
+<!ENTITY epsilon "&#949;">
+<!ENTITY equiv "&#8801;">
+<!ENTITY eta "&#951;">
+<!ENTITY eth "&#240;">
+<!ENTITY euml "&#235;">
+<!ENTITY exist "&#8707;">
+<!ENTITY fnof "&#402;">
+<!ENTITY forall "&#8704;">
+<!ENTITY frac12 "&#189;">
+<!ENTITY frac14 "&#188;">
+<!ENTITY frac34 "&#190;">
+<!ENTITY frasl "&#8260;">
+<!ENTITY gamma "&#947;">
+<!ENTITY ge "&#8805;">
+<!ENTITY hArr "&#8660;">
+<!ENTITY harr "&#8596;">
+<!ENTITY hearts "&#9829;">
+<!ENTITY hellip "&#8230;">
+<!ENTITY iacute "&#237;">
+<!ENTITY icirc "&#238;">
+<!ENTITY iexcl "&#161;">
+<!ENTITY igrave "&#236;">
+<!ENTITY image "&#8465;">
+<!ENTITY infin "&#8734;">
+<!ENTITY int "&#8747;">
+<!ENTITY iota "&#953;">
+<!ENTITY iquest "&#191;">
+<!ENTITY isin "&#8712;">
+<!ENTITY iuml "&#239;">
+<!ENTITY kappa "&#954;">
+<!ENTITY lArr "&#8656;">
+<!ENTITY lambda "&#955;">
+<!ENTITY lang "&#9001;">
+<!ENTITY laquo "&#171;">
+<!ENTITY larr "&#8592;">
+<!ENTITY lceil "&#8968;">
+<!ENTITY ldquo "&#8220;">
+<!ENTITY le "&#8804;">
+<!ENTITY lfloor "&#8970;">
+<!ENTITY lowast "&#8727;">
+<!ENTITY loz "&#9674;">
+<!ENTITY lrm "&#8206;">
+<!ENTITY lsaquo "&#8249;">
+<!ENTITY lsquo "&#8216;">
+<!ENTITY macr "&#175;">
+<!ENTITY mdash "&#8212;">
+<!ENTITY micro "&#181;">
+<!ENTITY middot "&#183;">
+<!ENTITY minus "&#8722;">
+<!ENTITY mu "&#956;">
+<!ENTITY nabla "&#8711;">
+<!ENTITY nbsp "&#160;">
+<!ENTITY ndash "&#8211;">
+<!ENTITY ne "&#8800;">
+<!ENTITY ni "&#8715;">
+<!ENTITY not "&#172;">
+<!ENTITY notin "&#8713;">
+<!ENTITY nsub "&#8836;">
+<!ENTITY ntilde "&#241;">
+<!ENTITY nu "&#957;">
+<!ENTITY oacute "&#243;">
+<!ENTITY ocirc "&#244;">
+<!ENTITY oelig "&#339;">
+<!ENTITY ograve "&#242;">
+<!ENTITY oline "&#8254;">
+<!ENTITY omega "&#969;">
+<!ENTITY omicron "&#959;">
+<!ENTITY oplus "&#8853;">
+<!ENTITY or "&#8870;">
+<!ENTITY ordf "&#170;">
+<!ENTITY ordm "&#186;">
+<!ENTITY oslash "&#248;">
+<!ENTITY otilde "&#245;">
+<!ENTITY otimes "&#8855;">
+<!ENTITY ouml "&#246;">
+<!ENTITY para "&#182;">
+<!ENTITY part "&#8706;">
+<!ENTITY permil "&#8240;">
+<!ENTITY perp "&#8869;">
+<!ENTITY phi "&#966;">
+<!ENTITY pi "&#960;">
+<!ENTITY piv "&#982;">
+<!ENTITY plusmn "&#177;">
+<!ENTITY pound "&#163;">
+<!ENTITY prime "&#8242;">
+<!ENTITY prod "&#8719;">
+<!ENTITY prop "&#8733;">
+<!ENTITY psi "&#968;">
+<!ENTITY rArr "&#8658;">
+<!ENTITY radic "&#8730;">
+<!ENTITY rang "&#9002;">
+<!ENTITY raquo "&#187;">
+<!ENTITY rarr "&#8594;">
+<!ENTITY rceil "&#8969;">
+<!ENTITY rdquo "&#8221;">
+<!ENTITY real "&#8476;">
+<!ENTITY reg "&#174;">
+<!ENTITY rfloor "&#8971;">
+<!ENTITY rho "&#961;">
+<!ENTITY rlm "&#8207;">
+<!ENTITY rsaquo "&#8250;">
+<!ENTITY rsquo "&#8217;">
+<!ENTITY sbquo "&#8218;">
+<!ENTITY scaron "&#353;">
+<!ENTITY sdot "&#8901;">
+<!ENTITY sect "&#167;">
+<!ENTITY shy "&#173;">
+<!ENTITY sigma "&#963;">
+<!ENTITY sigmaf "&#962;">
+<!ENTITY sim "&#8764;">
+<!ENTITY spades "&#9824;">
+<!ENTITY sub "&#8834;">
+<!ENTITY sube "&#8838;">
+<!ENTITY sum "&#8721;">
+<!ENTITY sup "&#8835;">
+<!ENTITY sup1 "&#185;">
+<!ENTITY sup2 "&#178;">
+<!ENTITY sup3 "&#179;">
+<!ENTITY supe "&#8839;">
+<!ENTITY szlig "&#223;">
+<!ENTITY tau "&#964;">
+<!ENTITY there4 "&#8756;">
+<!ENTITY theta "&#952;">
+<!ENTITY thetasym "&#977;">
+<!ENTITY thinsp "&#8201;">
+<!ENTITY thorn "&#254;">
+<!ENTITY tilde "&#732;">
+<!ENTITY times "&#215;">
+<!ENTITY trade "&#8482;">
+<!ENTITY uArr "&#8657;">
+<!ENTITY uacute "&#250;">
+<!ENTITY uarr "&#8593;">
+<!ENTITY ucirc "&#251;">
+<!ENTITY ugrave "&#249;">
+<!ENTITY uml "&#168;">
+<!ENTITY upsih "&#978;">
+<!ENTITY upsilon "&#965;">
+<!ENTITY uuml "&#252;">
+<!ENTITY weierp "&#8472;">
+<!ENTITY xi "&#958;">
+<!ENTITY yacute "&#253;">
+<!ENTITY yen "&#165;">
+<!ENTITY yuml "&#255;">
+<!ENTITY zeta "&#950;">
+<!ENTITY zwj "&#8205;">
+<!ENTITY zwnj "&#8204;">
+<!ELEMENT supplemental-pub-data (supp.title-block, process-category?, supp.data-block)>
+<!ATTLIST supplemental-pub-data
+	id ID #REQUIRED
+	label CDATA #FIXED "[Supplemental Publication Data:] "
+	class CDATA #FIXED "legal-instrument"
+>
+<!ELEMENT supp.title-block (supp.title, supp.version)>
+<!ATTLIST supp.title-block
+	label CDATA #FIXED "[Title Block:] "
+	class CDATA #FIXED "template-id"
+>
+<!ELEMENT supp.title EMPTY>
+<!ATTLIST supp.title
+	label CDATA #FIXED "[Title:] "
+	class CDATA #FIXED "title"
+	text CDATA #FIXED "SUPPLEMENTAL PUBLICATION DATA"
+>
+<!ELEMENT supp.version EMPTY>
+<!ATTLIST supp.version
+	class CDATA #FIXED "version"
+	distribution CDATA #FIXED "2012-12-04"
+	label CDATA #FIXED "[Version:] "
+	version CDATA #FIXED "[Electronic Version 0.0.8] "
+>
+<!ELEMENT process-category (classification-outsourcing | edc | pgpub | grant)>
+<!ELEMENT classification-outsourcing (normal | special | research | pgpub-classification-correction | grant-classification-correction)>
+<!ELEMENT normal EMPTY>
+<!ELEMENT special EMPTY>
+<!ELEMENT research EMPTY>
+<!ELEMENT pgpub-classification-correction EMPTY>
+<!ELEMENT grant-classification-correction EMPTY>
+<!ELEMENT edc (initial | final)>
+<!ELEMENT initial EMPTY>
+<!ELEMENT final EMPTY>
+<!ELEMENT pgpub (initial | final)>
+<!ELEMENT grant (initial | final)>
+<!ELEMENT supp.data-block (application-number, uspto-org-unit-name?, application-category?, invention-subject-matter?, notice-of-allowance-date?, domestic-filing-data?, projected-publication-date?, representative-figure?, classifications-cpc?, classification-us?, classifications-ipcr?, prior-publication?, international-conventions?, sequence-listing-available?)>
+<!ATTLIST supp.data-block
+	label CDATA #FIXED "[Supplemental Data Block:] "
+>
+<!ELEMENT application-number (#PCDATA)>
+<!ATTLIST application-number
+	label CDATA #FIXED "[Application No:] "
+	class CDATA #FIXED "primitive"
+	data-format CDATA #FIXED "##/###,###|########|##/######"
+>
+<!ELEMENT uspto-org-unit-name (#PCDATA)>
+<!ELEMENT application-category (regular | provisional | reissue | reexam)>
+<!ELEMENT regular EMPTY>
+<!ELEMENT provisional EMPTY>
+<!ELEMENT reissue EMPTY>
+<!ELEMENT reexam EMPTY>
+<!ELEMENT invention-subject-matter (plant | utility | design)>
+<!ELEMENT plant EMPTY>
+<!ELEMENT utility EMPTY>
+<!ELEMENT design EMPTY>
+<!ELEMENT notice-of-allowance-date (#PCDATA)>
+<!ELEMENT domestic-filing-data (application-number, application-number-series-code, filing-date, continued-prosecution-application-flag?, rule-47-flag?)>
+<!ATTLIST domestic-filing-data
+	label CDATA #FIXED "[Domestic Filing Data:] "
+>
+<!ELEMENT application-number-series-code (#PCDATA)>
+<!ATTLIST application-number-series-code
+	label CDATA #FIXED "[Application Number Series Code:] "
+>
+<!ELEMENT filing-date (#PCDATA)>
+<!ATTLIST filing-date
+	label CDATA #FIXED "[Filing Date:] "
+>
+<!ELEMENT continued-prosecution-application-flag EMPTY>
+<!ATTLIST continued-prosecution-application-flag
+	label CDATA #FIXED "[Continued Prosecution Application Flag:] "
+>
+<!ELEMENT rule-47-flag EMPTY>
+<!ATTLIST rule-47-flag
+	label CDATA #FIXED "[Rule 47 Flag:] "
+>
+<!ELEMENT projected-publication-date (#PCDATA)>
+<!ATTLIST projected-publication-date
+	label CDATA #FIXED "[Projected Publication Date:] "
+>
+<!ELEMENT representative-figure (#PCDATA)>
+<!ATTLIST representative-figure
+	label CDATA #FIXED "[Representative Figure:] "
+>
+<!ELEMENT classification-us (classification-us-primary, classification-us-secondary*)>
+<!ATTLIST classification-us
+	label CDATA #FIXED "[US Classification:] "
+	class CDATA #FIXED "classification"
+>
+<!ELEMENT classification-us-primary (uspc)>
+<!ATTLIST classification-us-primary
+	label CDATA #FIXED "[US Classification (Primary):] "
+	class CDATA #FIXED "classification"
+>
+<!ELEMENT uspc (class, subclass, classification-value?)>
+<!ATTLIST uspc
+	label CDATA #FIXED "[US Patent Classification:] "
+>
+<!ELEMENT class (#PCDATA)>
+<!ATTLIST class
+	label CDATA #FIXED "[Class:] "
+>
+<!ELEMENT subclass (#PCDATA)>
+<!ATTLIST subclass
+	label CDATA #FIXED "[Subclass:] "
+>
+<!ELEMENT classification-us-secondary (uspc | uspc-freeform)>
+<!ATTLIST classification-us-secondary
+	label CDATA #FIXED "[US Classification (Secondary):] "
+	class CDATA #FIXED "classification"
+>
+<!ELEMENT uspc-freeform (#PCDATA)>
+<!ATTLIST uspc-freeform
+	label CDATA #FIXED "[US Patent Classification, freeform:] "
+	class CDATA #FIXED "primitiv"
+>
+<!ELEMENT classifications-ipcr (classification-ipcr+)>
+<!ATTLIST classifications-ipcr
+	id ID #IMPLIED
+>
+<!ELEMENT classification-ipcr (ipc-version-indicator, classification-level?, section, class, subclass, main-group?, subgroup?, symbol-position?, classification-value?, action-date?, generating-office?, classification-status?, classification-data-source?)>
+<!ATTLIST classification-ipcr
+	id ID #IMPLIED
+	sequence CDATA #IMPLIED
+>
+<!-- -->
+<!ELEMENT main-cpc (classification-cpc)>
+<!ATTLIST main-cpc
+	id ID #IMPLIED
+>
+<!-- -->
+<!ELEMENT further-cpc (classification-cpc*, combination-set*)>
+<!ATTLIST further-cpc
+	id ID #IMPLIED
+>
+<!-- -->
+<!ELEMENT classifications-cpc (main-cpc, further-cpc?)>
+<!ATTLIST classifications-cpc
+	id ID #IMPLIED
+>
+<!-- Cooperative Patent Classification scheme -->
+<!ELEMENT classification-cpc (cpc-version-indicator, section, class, subclass, main-group, subgroup, symbol-position, classification-value)>
+<!ATTLIST classification-cpc
+	id ID #IMPLIED
+	sequence CDATA #IMPLIED
+>
+<!-- The publication date of the CPC group assigned. -->     
+<!ELEMENT cpc-version-indicator (date)>
+<!-- A combination set is a group of CPC symbols that have one base class and one or more subsequent ranked symbols that are linked together to convey special classification information.-->
+<!ELEMENT combination-set (group-number, combination-rank+)>
+<!ATTLIST combination-set
+	id ID #IMPLIED
+>
+<!-- -->
+<!ELEMENT combination-rank (rank-number, classification-cpc)>
+<!ATTLIST combination-rank
+	id ID #IMPLIED
+>
+<!-- The sequential number that is used to identify the rank of a symbol within a combination set.  (Order of the symbols is important). -->
+<!ELEMENT rank-number (#PCDATA)>
+<!-- A number that is used to identify a group of symbols, when allocating a combination set of symbols to a patent document.-->
+<!ELEMENT group-number (#PCDATA)>
+<!-- -->
+<!ELEMENT ipc-version-indicator (date)>
+<!-- -->
+<!ELEMENT date (#PCDATA)>
+<!-- The code that classifies the subject matter level.   C (Core), A (Advanced) , S (Subclass), blank (for CPC). -->
+<!ELEMENT classification-level (#PCDATA)>
+<!--  The highest hierarchical level within the classification scheme and as such it represents the whole body of knowledge which may be regarded as proper to the field of Classification. -->
+<!ELEMENT section (#PCDATA)>
+<!-- The code denotes the fourth level subdivision of the classification scheme and as such is a further breakdown of the novel subject matter. -->
+<!ELEMENT main-group (#PCDATA)>
+<!-- The code denotes the fifth level subdivision of the classification scheme and as such is a further breakdown of the novel subject matter. -->
+<!ELEMENT subgroup (#PCDATA)>
+<!-- The code that specifies the position of the classification symbol. -->
+<!ELEMENT symbol-position (#PCDATA)>
+<!-- The code that distinguishes between invention information (invention) and other information (non-invention/additional), when describing a classification symbol on a document. -->
+<!ELEMENT classification-value (#PCDATA)>
+<!--The date the symbol was allocated to the patent document. -->
+<!ELEMENT action-date (date)>
+<!--The IP Office that allocated the classification symbol to the patent document.  The code is based on WIPO Standard ST.3. -->
+<!ELEMENT generating-office (country)>
+<!--Country: use ST.3 country code, e.g. DE, FR, GB, NL, etc. Also includes EP, WO, etc.-->
+<!ELEMENT country (#PCDATA)>
+<!-- The code that describes the circumstances under which the symbol was allocated to the patent document. -->
+<!ELEMENT classification-status (#PCDATA)>
+<!-- The code that describes the source of the allocation of the symbol to the patent document. -->
+<!ELEMENT classification-data-source (#PCDATA)>
+<!-- -->
+<!ELEMENT prior-publication (document-id+)>
+<!ATTLIST prior-publication
+	label CDATA #FIXED "[Prior Publication:] "
+>
+<!ELEMENT document-id (doc-number, kind-code?, document-date?, country-code?)>
+<!ATTLIST document-id
+	label CDATA #FIXED "[Document ID:] "
+	class CDATA #FIXED "primitiv"
+>
+<!ELEMENT doc-number (#PCDATA)>
+<!ATTLIST doc-number
+	label CDATA #FIXED "[Doc Number:] "
+	class CDATA #FIXED "primitiv"
+>
+<!ELEMENT kind-code (#PCDATA)>
+<!ATTLIST kind-code
+	label CDATA #FIXED "[KIND Code:] "
+	class CDATA #FIXED "primitiv"
+>
+<!ELEMENT document-date (#PCDATA)>
+<!ATTLIST document-date
+	label CDATA #FIXED "[Document Date:] "
+	class CDATA #FIXED "primitive"
+>
+<!ELEMENT country-code (#PCDATA)>
+<!ATTLIST country-code
+	label CDATA #FIXED "[Country Code:] "
+	class CDATA #FIXED "primitiv"
+>
+<!ELEMENT international-conventions (pct-application, usc371-date?, usc102e-date, pct-publication?)>
+<!ATTLIST international-conventions
+	label CDATA #FIXED "[International Conventions:] "
+	st32-name CDATA #FIXED "B800"
+	inid-code CDATA #IMPLIED
+>
+<!ELEMENT pct-application (document-id)>
+<!ATTLIST pct-application
+	label CDATA #FIXED "[PCT Application:] "
+	st32-name CDATA #FIXED "B860"
+	inid-code CDATA #IMPLIED
+>
+<!ELEMENT usc371-date (#PCDATA)>
+<!ATTLIST usc371-date
+	label CDATA #FIXED "[USC371 Date:] "
+	st32-name CDATA #FIXED "B863"
+	inid-code CDATA #IMPLIED
+>
+<!ELEMENT usc102e-date (#PCDATA)>
+<!ATTLIST usc102e-date
+	label CDATA #FIXED "[USC102e Date:] "
+	st32-name CDATA #FIXED "B864"
+>
+<!ELEMENT pct-publication (document-id)>
+<!ATTLIST pct-publication
+	label CDATA #FIXED "[PCT Publication:] "
+	st32-name CDATA #FIXED "B871"
+	inid-code CDATA #IMPLIED
+>
+<!ELEMENT sequence-listing-available (publish-sequence-listing)>
+<!ATTLIST sequence-listing-available
+	label CDATA #FIXED "[Sequence Listing Available:] "
+>
+<!ELEMENT publish-sequence-listing EMPTY>
+<!ATTLIST publish-sequence-listing
+	label CDATA #FIXED "[Publish Sequence Listing:] "
+	value (yes | no) "yes"
+>

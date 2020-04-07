@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<booking>
+    <name>santosh</name>
+    <contact>123456</contact>
+    <startDate>2012-09-11T00:00:00-04:00</startDate>
+    <endDate>2012-09-14T00:00:00-04:00</endDate>
+    <address>Aldie</address>
+</booking>

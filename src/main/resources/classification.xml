@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE supplemental-pub-data SYSTEM "u-suppub8-2012-12-04.dtd"[]>
+<supplemental-pub-data id="DD"
+	label="[Supplemental Publication Data:] " class="legal-instrument">
+	<supp.title-block>
+		<supp.title text="SUPPLEMENTAL PUBLICATION DATA" />
+		<supp.version version="[Electronic Version 0.0.8] " />
+	</supp.title-block>
+	<process-category>
+		<classification-outsourcing>
+			<normal />
+		</classification-outsourcing>
+	</process-category>
+	<supp.data-block>
+		<application-number>16295847</application-number>
+		<representative-figure>1</representative-figure>
+		<classifications-cpc>
+			<main-cpc>
+				<classification-cpc>
+					<cpc-version-indicator>
+						<date>20141101</date>
+					</cpc-version-indicator>
+					<section>H</section>
+					<class>04</class>
+					<subclass>N</subclass>
+					<main-group>19</main-group>
+					<subgroup>187</subgroup>
+					<symbol-position>F</symbol-position>
+					<classification-value>I</classification-value>
+				</classification-cpc>
+			</main-cpc>
+			<further-cpc>
+				<classification-cpc>
+					<cpc-version-indicator>
+						<date>20141101</date>
+					</cpc-version-indicator>
+					<section>H</section>
+					<class>04</class>
+					<subclass>N</subclass>
+					<main-group>19</main-group>
+					<subgroup>31</subgroup>
+					<symbol-position>L</symbol-position>
+					<classification-value>I</classification-value>
+				</classification-cpc>
+				<classification-cpc>
+					<cpc-version-indicator>
+						<date>20141101</date>
+					</cpc-version-indicator>
+					<section>H</section>
+					<class>04</class>
+					<subclass>N</subclass>
+					<main-group>19</main-group>
+					<subgroup>33</subgroup>
+					<symbol-position>L</symbol-position>
+					<classification-value>I</classification-value>
+				</classification-cpc>
+				<classification-cpc>
+					<cpc-version-indicator>
+						<date>20141101</date>
+					</cpc-version-indicator>
+					<section>H</section>
+					<class>04</class>
+					<subclass>N</subclass>
+					<main-group>19</main-group>
+					<subgroup>503</subgroup>
+					<symbol-position>L</symbol-position>
+					<classification-value>I</classification-value>
+				</classification-cpc>
+			</further-cpc>
+		</classifications-cpc>
+		<classification-us>
+			<classification-us-primary>
+				<uspc>
+					<class>382</class>
+					<subclass>232000</subclass>
+				</uspc>
+			</classification-us-primary>
+		</classification-us>
+	</supp.data-block>
+</supplemental-pub-data>

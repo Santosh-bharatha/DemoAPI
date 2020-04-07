@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<supplemental-pub-data id="DD"
+	label="[Supplemental Publication Data:] " class="legal-instrument">
+  <supp.title-block>
+    <supp.title text="SUPPLEMENTAL PUBLICATION DATA"/>
+    <supp.version version="[Electronic Version 0.0.8] "/>
+      </supp.title-block>
+  <process-category>
+    <classification-outsourcing>
+      <normal/>
+    </classification-outsourcing>
+  </process-category>
+  <supp.data-block>
+    <application-number>0</application-number>
+    <representative-figure>0</representative-figure>
+    <classifications-cpc>
+      <main-cpc>
+        <classification-cpc>
+          <cpc-version-indicator>
+            <date>0</date>
+          </cpc-version-indicator>
+          <section>section</section>
+          <class>0</class>
+          <subclass>subclass</subclass>
+          <main-group>0</main-group>
+          <subgroup>0</subgroup>
+          <symbol-position>symbol-position</symbol-position>
+          <classification-value>classification-value</classification-value>
+        </classification-cpc>
+      </main-cpc>
+      <further-cpc/>
+    </classifications-cpc>
+    <classification-us>
+      <classification-us-primary>
+        <uspc>
+          <class>0</class>
+          <subclass>0</subclass>
+        </uspc>
+      </classification-us-primary>
+    </classification-us>
+  </supp.data-block>
+</supplemental-pub-data>

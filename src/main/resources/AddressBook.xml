@@ -1,0 +1,28 @@
+<addressBook>
+   <addresses length="3">
+      <address>
+         <house>House 33</house>
+         <street>Sesame Street</street>
+         <city>City</city>
+      </address>
+      <address>
+         <street>Some Street</street>
+         <city>The City</city>
+      </address>
+      <address>
+         <house>Another House</house>
+         <street>My Street</street>
+         <city>Same City</city>
+      </address>
+   </addresses>
+   <names length="3">
+      <string>Jonny Walker</string>
+      <string>Jack Daniels</string>
+      <string>Jim Beam</string>
+   </names>
+   <ages length="3">
+      <int>30</int>
+      <int>42</int>
+      <int>31</int>
+   </ages>
+</addressBook>

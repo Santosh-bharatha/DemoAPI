@@ -1,0 +1,11 @@
+<orderManager>
+	<order name="AX101" class="com.demo.simplexml.model.OrderManager">
+		<product>Product A</product>
+	</order>
+	<order name="AX102" class="com.demo.simplexml.model.OrderManager">
+		<product>Product B</product>
+	</order>
+	<order name="AX103" class="com.demo.simplexml.model.OrderManager">
+		<product>Product C</product>
+	</order>
+</orderManager>

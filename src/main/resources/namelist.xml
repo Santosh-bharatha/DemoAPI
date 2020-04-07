@@ -1,0 +1,15 @@
+<contact id="71" version="1.0">
+   <name>
+      <first>Niall</first>
+      <surname>Gallagher</surname>
+   </name>
+   <address>
+      <house>House 33</house>
+      <street>Sesame Street</street>
+      <city>City</city>
+   </address>
+   <phone>
+      <mobile>123456789</mobile>
+      <home>987654321</home>
+   </phone>
+</contact>
